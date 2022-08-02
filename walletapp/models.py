@@ -11,11 +11,11 @@ class Customer(models.Model):
         ('F','Female'),
         ('M','Male')
     )
+    address = models.TextField()
     email = models.EmailField()
     gender = models.CharField(max_length=10,null=True,choices=gender_type)
-    address = models.TextField()
-    age = models.PositiveIntegerField()
     nationality = models.CharField(max_length=15,null=True)
+    age = models.PositiveIntegerField()
     phone_number = models.CharField(max_length=15,null=True)
     employment_status = models.BooleanField(null=True)
     proile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
@@ -57,12 +57,12 @@ class Transaction(models.Model):
     transaction_date = models.DateTimeField(default=datetime.now)
     transactionreciept = models.CharField(max_length=8,null=True)
     origin_account = models.ForeignKey(Account, on_delete=models.CASCADE,null=True)
-    #destination_account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    
 
 class Card(models.Model):
+    card_number = models.IntegerField()
     issue_date = models.CharField(max_length=30,null=True)
     card_name = models.CharField(max_length=30,null=True)
-    card_number = models.IntegerField()
     type = (
         ('C','Credit Card'),
         ('D','Debit Card')
@@ -97,8 +97,8 @@ class Notification(models.Model):
 class Receipt(models.Model):
     receipt_type = models.CharField(max_length=5,null=True)
     receipt_date = models.DateTimeField()
-    bill_number = models.IntegerField(null=True)
     total_amount = models.IntegerField(null=True)
+    bill_number = models.IntegerField(null=True)
     receipt_file = models.FileField(null=True)
 
 class Loan(models.Model):
