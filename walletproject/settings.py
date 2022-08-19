@@ -83,11 +83,11 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fardosaproject',
-        'USER': 'projectuser',
-        'PASSWORD': '1+!qas2w',
+        'NAME': 'digitalwallet',
+        'USER': 'fardosa',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': 5432,
+        'PORT': '5432',
     }
 }
 
