@@ -95,7 +95,7 @@ class Notification(models.Model):
     date_and_time=models.DateTimeField(default=datetime.now)
 
 class Receipt(models.Model):
-    receipt_type = models.CharField(max_length=5,null=True)
+    receipt_type = models.CharField(max_length=20,null=True)
     receipt_date = models.DateTimeField()
     total_amount = models.IntegerField(null=True)
     bill_number = models.IntegerField(null=True)
