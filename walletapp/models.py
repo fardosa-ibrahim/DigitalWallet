@@ -18,7 +18,7 @@ class Customer(models.Model):
     age = models.PositiveIntegerField()
     phone_number = models.CharField(max_length=15,null=True)
     employment_status = models.BooleanField(null=True)
-    proile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    profile_picture = models.ImageField(default='default.jpg', upload_to='profile_pics')
     martialStatus=models.CharField(max_length=8,null=True)
     signature=models.ImageField(default='default.jpg',upload_to='profile_pics')
 

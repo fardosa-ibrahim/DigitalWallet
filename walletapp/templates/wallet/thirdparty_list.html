@@ -1,14 +1,38 @@
-<table>
-    <th>
-    <td>transaction_account</td>
-    <td>name</td>
-    <td>location</td>
-    </th>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #thirdpartys th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-weight: bold;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+
+<table id="mytable">
+    <tr>
+    <td>Transaction Day</td>
+    <td>Name</td>
+    <td>Thirdparty Location</td>
+    <td>Link to Profile</td>
+    </tr>
     {% for thirdparty in thirdpartys%}
     <tr>
         <td>{{ thirdparty.transaction_account}}</td>
         <td>{{ thirdparty.name}}</td>
         <td>{{ thirdparty.location}}</td>
+        <td><a href="{%url 'thirdparty_profile' id=thirdparty.id%}">View Provile</a></td>
     </tr>
     {%endfor%}
 </table>

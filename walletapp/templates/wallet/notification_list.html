@@ -1,14 +1,37 @@
-<table>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #notifications th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+
+<table id="mytable">
     <th>
     <td>name</td>
     <td>recipient</td>
     <td>date_and_time</td>
+    <td>Profile</td>
     </th>
     {% for notification in notifications%}
     <tr>
         <td>{{ notification.name}}</td>
         <td>{{ notification.recipient}}</td>
         <td>{{ notification.date_and_time}}</td>
+        <td><a href="{%url 'notification_profile' id=notification.id%}">View Provile</a></td>
     </tr>
     {%endfor%}
 </table>

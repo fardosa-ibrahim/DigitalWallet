@@ -1,9 +1,30 @@
-<table>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #cards th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+<table id="mytable">
     <th>
     <td>card_number</td>
     <td>card_date</td>
     <td>wallet</td>
     <td>issuer</td>
+    <td>profile</td>
     </th>
     {% for card in cards%}
     <tr>
@@ -11,6 +32,7 @@
         <td>{{ card.card_date}}</td>
         <td>{{ card.wallet}}</td>
         <td>{{ card.issuer}}</td>
+        <td><a href="{%url 'card_profile' id=card.id%}">View Provile</a></td>
     </tr>
     {%endfor%}
 </table>

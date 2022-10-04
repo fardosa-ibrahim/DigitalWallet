@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import  list_account, list_card, list_customers, list_loan, list_notification, list_receipt, list_reward, list_thirdparty, list_transaction, list_wallets, register_account, register_card, register_customer, register_loan, register_notification, register_receipt, register_reward, register_thirdparty, register_transaction, register_wallet
+from .views import account_profile, card_profile, customer_profile, edit_account, edit_card, edit_notification, edit_profile, edit_thirdparty, edit_transaction, edit_wallet, list_account, list_card, list_customers, list_loan, list_notification, list_receipt, list_reward, list_thirdparty, list_transaction, list_wallets, notification_profile, register_account, register_card, register_customer, register_loan, register_notification, register_receipt, register_reward, register_thirdparty, register_transaction, register_wallet, thirdparty_profile, transaction_profile, wallet_profile
 
 
 urlpatterns =[
@@ -23,4 +23,18 @@ urlpatterns =[
     path("loans/",list_loan,name="loans"),
     path("rewards/",list_reward,name="rewards"),
     path("transactions/",list_transaction,name="transactions"),
+    path("customers/<int:id>/", customer_profile,name="customer_profile"),
+    path("customers/edit/<int:id>/", edit_profile,name="edit_profile"),
+    path("wallets/<int:id>/", wallet_profile,name="wallet_profile"),
+    path("wallets/edit/<int:id>/", edit_wallet,name="edit_wallet"),
+    path("accounts/<int:id>/",account_profile,name="account_profile"),
+    path("accounts/edit/<int:id>/", edit_account,name="edit_account"),
+    path("transactions/<int:id>/",transaction_profile,name="transaction_profile"),
+    path("transactions/edit/<int:id>/", edit_transaction,name="edit_transaction"),
+    path("cards/<int:id>/",card_profile,name="card_profile"),
+    path("cards/edit/<int:id>/", edit_card,name="edit_card"),
+    path("thirdpartys/<int:id>/",thirdparty_profile,name="thirdparty_profile"),
+    path("thirdpartys/edit/<int:id>/",edit_thirdparty,name="edit_thirdparty"),
+    path("notifications/<int:id>/",notification_profile,name="notification_profile"),
+    path("notifications/edit/<int:id>/",edit_notification,name="edit_notification"),
     ]

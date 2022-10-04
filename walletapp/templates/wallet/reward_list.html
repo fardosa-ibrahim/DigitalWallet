@@ -1,9 +1,30 @@
-<table>
-    <th>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #rewards th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+
+<table id="mytable">
+    <tr>
     <td>date_of_reward</td>
     <td>reward_points</td>
     <td>recipient</td>
-    </th>
+    </tr>
     {% for reward in rewards%}
     <tr>
         <td>{{ reward.date_of_reward}}</td>
@@ -12,3 +33,20 @@
     </tr>
     {%endfor%}
 </table>
+
+
+// transform(input)
+// output :
+// {
+//   key1: [1, 2, 3, 4],
+//   key2: [4, 5, 6, 7],
+// }
+const input = [  ["key1", 1, 2, 3, 4],["key2", 4, 5, 6, 7]]
+
+const transform = (input) => {
+    const result = {};
+    input.forEach(arr => {
+     result[arr[0]] = arr.filter((obj,index) => index !== 0)
+    })
+    return result;
+   }

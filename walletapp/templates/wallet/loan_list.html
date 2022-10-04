@@ -1,9 +1,31 @@
-<table>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #loans th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+<table id="mytable">
     <th>
     <td>loan_type</td>
     <td>amount</td>
     <td>loan_balance</td>
     <td> payment_due_date </td>
+    <td>Profile</td>
+    
     </th>
     {% for loan in loans%}
     <tr>
@@ -11,6 +33,7 @@
         <td>{{ loan.amount}}</td>
         <td>{{ loan.loan_balance}}</td>
         <td>{{ loan.payment_due_date}}</td>
+        <td><a href="{%url 'loan_profile' id=loan.id%}">View Provile</a></td>
     </tr>
     {%endfor%}
 </table>

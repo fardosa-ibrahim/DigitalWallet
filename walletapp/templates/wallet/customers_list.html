@@ -1,14 +1,37 @@
-<table>
-    <th>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+
+<table id="mytable">
+    <tr>
     <td>firstname</td>
     <td>age</td>
     <td>email</td>
-    </th>
+    <td>profile</td>
+    </tr>
     {% for customer in customers%}
     <tr>
         <td>{{ customer.firstname}}</td>
         <td>{{ customer.age}}</td>
         <td>{{ customer.email}}</td>
+        <td><a href="{%url 'customer_profile' id=customer.id%}">View Provile</a></td>
     </tr>
     {%endfor%}
 </table>

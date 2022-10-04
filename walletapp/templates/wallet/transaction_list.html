@@ -1,9 +1,29 @@
-<table>
-    <th>
+<style>
+    #mytable {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      #mytable td, #transactions th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #mytable tr:hover {background-color:rgb(167, 216, 152);}
+      #mytable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #33aa69;
+        color: white;
+      }
+</style>
+<table id="mytable">
+    <tr>
     <td>transaction_amount</td>
     <td>transaction_charge</td>
     <td>transaction_date </td>
-    </th>
+    </tr>
     {% for transaction in transactions%}
     <tr>
         <td>{{ transaction.transaction_amount}}</td>
