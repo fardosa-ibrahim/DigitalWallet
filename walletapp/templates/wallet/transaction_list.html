@@ -23,12 +23,14 @@
     <td>transaction_amount</td>
     <td>transaction_charge</td>
     <td>transaction_date </td>
+    <td>Profile</td>
     </tr>
     {% for transaction in transactions%}
     <tr>
         <td>{{ transaction.transaction_amount}}</td>
         <td>{{ transaction.transaction_charge}}</td>
         <td>{{ transaction.transaction_date}}</td>
+        <td><a href="{%url 'transaction_profile' id=transaction.id%}">View Provile</a></td>
     </tr>
     {%endfor%}
 </table>

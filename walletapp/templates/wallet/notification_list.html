@@ -20,12 +20,12 @@
 </style>
 
 <table id="mytable">
-    <th>
+    <tr>
     <td>name</td>
     <td>recipient</td>
     <td>date_and_time</td>
     <td>Profile</td>
-    </th>
+    </tr>
     {% for notification in notifications%}
     <tr>
         <td>{{ notification.name}}</td>

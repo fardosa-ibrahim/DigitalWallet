@@ -232,36 +232,25 @@ def edit_card(request,id):
         return render(request,"wallet/edit_card.html",{"form":form})
 
 
-def thirdparty_profile(request,id):
-    thirdparty=Thirdparty.objects.get(id=id)
-    return render(request,"wallet/thirdparty_profile.html",{"transaction":thirdparty})
+
+def receipt_profile(request,id):
+    receipt=Receipt.objects.get(id=id)
+    return render(request,"wallet/receipt_profile.html",{"receipt":receipt})
     
-def edit_thirdparty(request,id):
-    thirdparty=Thirdparty.objects.get(id=id)
+def edit_receipt(request,id):
+    receipt=Receipt.objects.get(id=id)
     if request.method=="POST":
-        form = ThirdpartyRegistrationForm(request.POST,instance=thirdparty)
+        form = ReceiptRegistrationForm(request.POST,instance=receipt)
         if form.isvalid():
             form.save()
-            return redirect("card_profile",id=thirdparty.id)
+            return redirect("receipt_profile",id=receipt.id)
     else:
-        form =ThirdpartyRegistrationForm(instance=Thirdparty)
-        return render(request,"wallet/edit_thirdparty.html",{"form":form})
+        form =ReceiptRegistrationForm(instance=Receipt)
+        return render(request,"wallet/edit_receipt.html",{"form":form})
 
 
-def notification_profile(request,id):
-    notification=Notification.objects.get(id=id)
-    return render(request,"wallet/notification_profile.html",{"transaction":notification})
-    
-def edit_notification(request,id):
-    notification=Notification.objects.get(id=id)
-    if request.method=="POST":
-        form = NotificationRegistrationForm(request.POST,instance=notification)
-        if form.isvalid():
-            form.save()
-            return redirect("card_profile",id=notification.id)
-    else:
-        form =NotificationRegistrationForm(instance=Notification)
-        return render(request,"wallet/edit_notification.html",{"form":form})
+
+
 
 
 

@@ -19,14 +19,14 @@
       }
 </style>
 <table id="mytable">
-    <th>
+    <tr>
     <td>loan_type</td>
     <td>amount</td>
     <td>loan_balance</td>
     <td> payment_due_date </td>
     <td>Profile</td>
     
-    </th>
+    </tr>
     {% for loan in loans%}
     <tr>
         <td>{{ loan.loan_type}}</td>

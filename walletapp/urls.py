@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import account_profile, card_profile, customer_profile, edit_account, edit_card, edit_notification, edit_profile, edit_thirdparty, edit_transaction, edit_wallet, list_account, list_card, list_customers, list_loan, list_notification, list_receipt, list_reward, list_thirdparty, list_transaction, list_wallets, notification_profile, register_account, register_card, register_customer, register_loan, register_notification, register_receipt, register_reward, register_thirdparty, register_transaction, register_wallet, thirdparty_profile, transaction_profile, wallet_profile
+from .views import account_profile, card_profile, customer_profile, edit_account, edit_card, edit_profile, edit_receipt, edit_transaction, edit_wallet, list_account, list_card, list_customers, list_loan, list_notification, list_receipt, list_reward, list_thirdparty, list_transaction, list_wallets, receipt_profile, register_account, register_card, register_customer, register_loan, register_notification, register_receipt, register_reward, register_thirdparty, register_transaction, register_wallet, transaction_profile, wallet_profile
 
 
 urlpatterns =[
@@ -33,8 +33,6 @@ urlpatterns =[
     path("transactions/edit/<int:id>/", edit_transaction,name="edit_transaction"),
     path("cards/<int:id>/",card_profile,name="card_profile"),
     path("cards/edit/<int:id>/", edit_card,name="edit_card"),
-    path("thirdpartys/<int:id>/",thirdparty_profile,name="thirdparty_profile"),
-    path("thirdpartys/edit/<int:id>/",edit_thirdparty,name="edit_thirdparty"),
-    path("notifications/<int:id>/",notification_profile,name="notification_profile"),
-    path("notifications/edit/<int:id>/",edit_notification,name="edit_notification"),
+    path("receipts/<int:id>/",receipt_profile,name="receipt_profile"),
+    path("receipts/edit/<int:id>/",edit_receipt,name="edit_receipt"),
     ]
