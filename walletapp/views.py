@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
-from walletapp.models import Account, Card, Customer, Loan, Notification, Receipt, Reward, Thirdparty, Transaction, Wallet
+from walletapp.models import Account, Card, Customer, Loan, Notification, Receipt, Reward, Thirdparty, Transaction, Wallet,
 from .forms import CustomerRegistrationForm
 from .forms import WalletRegistrationForm
 from .forms import AccountRegistrationForm
